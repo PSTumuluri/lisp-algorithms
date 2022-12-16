@@ -1,0 +1,7 @@
+(defun insertion-sort (array)
+  (do ((j 1 (1+ j)))
+      ((= j (length array)))
+    (let ((key (elt array j)))
+      (do ((i (- j 1) (1- i)))
+          ((or (< i 0) (<= (elt array i) key)) (setf (elt array (+ i 1)) key))
+        (setf (elt array (+ i 1)) (elt array i))))))
